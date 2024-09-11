@@ -3,7 +3,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 from numpy.polynomial.polynomial import Polynomial
 
-# Original function
 def fun_original(n):
     x = 1
     for i in range(n):
@@ -11,7 +10,6 @@ def fun_original(n):
             x = x + 1
     return x
 
-# Modified function
 def fun_modified(n):
     x = 1
     y = 1
@@ -39,18 +37,14 @@ for n in ns:
     end = time.time()
     times_modified.append(end - start)
 
-# Fitting a polynomial to the original function's timings
-coeffs = np.polyfit(ns, times_original, 2)  # Quadratic fit
+coeffs = np.polyfit(ns, times_original, 2)  
 p = Polynomial(coeffs[::-1])  # Create Polynomial object for easy plotting
 
-# Defining upper and lower bounds
 upper_bound = lambda n: 1.2 * p(n)  # Adjust multipliers to get tight bounds
 lower_bound = lambda n: 0.8 * p(n)  # Adjust multipliers to get tight bounds
 
-# Plotting the time vs n
 plt.figure(figsize=(18, 6))
 
-# 1st Plot: Time vs n for the original function
 plt.subplot(1, 3, 1)
 plt.plot(ns, times_original, 'bo-', label='Original Function')
 plt.xlabel('n')
@@ -58,7 +52,6 @@ plt.ylabel('Time (s)')
 plt.title('Time vs n for Original Function')
 plt.grid(True)
 
-# 2nd Plot: Time vs n with upper and lower bounds
 plt.subplot(1, 3, 2)
 plt.plot(ns, times_original, 'bo-', label='Time Taken')
 plt.plot(ns, p(ns), 'r-', label='Fitted Curve')
@@ -71,7 +64,6 @@ plt.title('Time vs n with Upper and Lower Bounds')
 plt.legend()
 plt.grid(True)
 
-# 3rd Plot: Modified function with upper and lower bounds and n0
 plt.subplot(1, 3, 3)
 plt.plot(ns, times_modified, 'bo-', label='Modified Function')
 plt.plot(ns, p(ns), 'r-', label='Fitted Curve')

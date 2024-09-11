@@ -18,6 +18,7 @@
  Big-Omega (Lower Bound) : The function is bounded below by Ω(n^2), as seen by the yellow dashed line that lies below the fitted curve.
  Big-Theta(Tight limit): The tight limit for the runtime is Θ(n^2) since the top and lower bounds are both quadratic and closely match the real timing data.
 
+
 4) Find the approximate (eye ball it) location of "n_0" . Do this by zooming in on your plot and indicating on the plot where n_0 is and why you picked this value. Hint: I should see data that does not follow the trend of the polynomial you determined in #2
 
 On the graph, a vertical dashed line at n=1800 indicates n0.
@@ -33,6 +34,7 @@ x = f(n)
         for j = 1:n
              x = x + 1;
         y = i + j;
+
 
 4) Will this increase how long it takes the algorithm to run (e.x. you are timing the function like in #2)?
 

@@ -38,10 +38,10 @@ for n in ns:
     times_modified.append(end - start)
 
 coeffs = np.polyfit(ns, times_original, 2)  
-p = Polynomial(coeffs[::-1])  # Create Polynomial object for easy plotting
+p = Polynomial(coeffs[::-1])  
 
-upper_bound = lambda n: 1.2 * p(n)  # Adjust multipliers to get tight bounds
-lower_bound = lambda n: 0.8 * p(n)  # Adjust multipliers to get tight bounds
+upper_bound = lambda n: 1.2 * p(n)  
+lower_bound = lambda n: 0.8 * p(n)  
 
 plt.figure(figsize=(18, 6))
 
